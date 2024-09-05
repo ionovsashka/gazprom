@@ -1,0 +1,31 @@
+@use "../../../../../styles/mixins/hoverable-mixins" as hoverableMixins;
+
+.training-page {
+  padding: 24px;
+
+  &__theme {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    width: 100%;
+    background-color: white;
+    padding: 24px 8px;
+    border-radius: 10px;
+    color: dodgerblue;
+
+    &-name {
+      cursor: pointer;
+
+      &:hover {
+        @include hoverableMixins.link-hover;
+      }
+    }
+
+    &_l {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  }
+}
