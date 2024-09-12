@@ -5,17 +5,17 @@ export const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "training",
+    redirectTo: "tests",
   },
   {
-    path: "training",
+    path: "tests",
     loadComponent: (): Promise<Type<unknown>> =>
       import("./modules/pages/training/container/training.component").then(
         (module) => module.TrainingComponent,
       ),
   },
   {
-    path: "training/cyber-security",
+    path: "tests/cyber-security",
     loadComponent: (): Promise<Type<unknown>> =>
       import("../app/modules/pages/training/pages/cyber-security/container/cyber-security.component").then(
         (module) => module.CyberSecurityComponent,

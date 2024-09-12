@@ -1,0 +1,57 @@
+.cyber-security {
+    padding: 24px;
+    color: white;
+
+    &__text {
+        display: block;
+        font-size: 24px;
+        margin-bottom: 8px;
+    }
+
+    &__question {
+        margin-bottom: 16px;
+        text-align: center;
+
+        &-img {
+            width: 750px;
+            height: 500px;  
+        }
+
+        &-variants {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        &-variant {
+            color: black;
+            font-size: 14px;
+            text-align: left;
+            padding: 8px 16px;
+            border-radius: 10px;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__message {
+        &-container {
+            text-align: center;
+        }
+
+        &-title {
+            color: white;
+            font-size: 36px;
+        }
+
+        &-button {
+            margin-top: 16px;
+            width: 200px;
+            padding: 8px;
+            border-radius: 10px;
+            color: dodgerblue;
+        }
+    }
+}
