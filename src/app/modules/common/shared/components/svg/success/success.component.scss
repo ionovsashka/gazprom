@@ -1,0 +1,16 @@
+:host {
+    display: inline-flex;
+    width: 18px;
+    height: 18px;
+    align-items: center;
+    justify-items: center;
+    fill: dodgerblue;
+}
+
+.filled-success-circle-svg {
+    flex-grow: 1;
+
+    &__tick {
+        fill: transparent;
+    }
+}

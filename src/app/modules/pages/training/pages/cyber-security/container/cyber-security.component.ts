@@ -1,7 +1,6 @@
 import { NgOptimizedImage } from "@angular/common";
 import { ChangeDetectionStrategy, inject } from "@angular/core";
 import { Component } from '@angular/core';
-import { CyberSecurityInstructionComponent } from "../components/cyber-security-instruction/cyber-security-instruction.component";
 import { Insctuction } from "../../cyber-security/models/insctuction.model";
 import { CyberSecurityRoutingModule } from "../cyber-security-routing.module";
 import { Router } from "@angular/router";
@@ -9,7 +8,7 @@ import { Router } from "@angular/router";
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   standalone: true,
-  imports: [CyberSecurityRoutingModule, CyberSecurityInstructionComponent, NgOptimizedImage],
+  imports: [CyberSecurityRoutingModule, NgOptimizedImage],
   templateUrl: 'cyber-security.component.html',
   styleUrl: 'cyber-security.component.scss'
 })
@@ -25,7 +24,7 @@ export class CyberSecurityComponent {
 
   errorCode: number | null = null;
 
-  showSuccessMessage: boolean = false;
+  successCode: number | null = null;
 
   //endregion
   //region Public
@@ -36,7 +35,7 @@ export class CyberSecurityComponent {
       return;
     }
 
-    this.showSuccessMessage = true;
+    this.successCode = 1;
   }
 
 randomNumber(min: number, max: number): number {
@@ -45,12 +44,12 @@ randomNumber(min: number, max: number): number {
 
 nextBtnClickHandler() {
   if (this.currentQuestion === 3) {
-    this._router.navigate(["training"])
+    this._router.navigate(["training"], { queryParams: { status: "passed" }})
     return;
   }
 
   this.currentQuestion++;
-  this.showSuccessMessage = false;
+  this.successCode = null;
 }
 
   //endregion

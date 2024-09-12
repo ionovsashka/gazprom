@@ -10,6 +10,7 @@
 
     &__question {
         margin-bottom: 16px;
+        text-align: center;
 
         &-img {
             width: 750px;
@@ -23,7 +24,7 @@
         }
 
         &-variant {
-            color: dodgerblue;
+            color: black;
             font-size: 14px;
             text-align: left;
             padding: 8px 16px;
