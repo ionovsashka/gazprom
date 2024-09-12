@@ -1,9 +1,77 @@
 <div class="cyber-security">
-  <div class="cyber-security__question-container">
-    <h2 class="cyber-security__title">Вопрос 1</h2>
-    <div class="cyber-security__question">
-      <span>На экране выводится следующее сообщение. Что необходимо сделать?</span>
-      <img src="/assets/questions/question1.jpg" alt="" srcset="">
+  @if(!errorCode && !showSuccessMessage) {
+    @if(currentQuestion === 1){
+      <div class="cyber-security__question">
+        <span class="cyber-security__text">На экране выводится следующее сообщение. Что необходимо сделать?</span>
+        <img class="cyber-security__question-img" src="../../../../../../../assets/img/question1.jpg" alt="">
+      </div>
+      <div class="cyber-security__question-variants">
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(false)">НЕЗАМЕДЛИТЕЛЬНО СООБЩИТЬ НАЧАЛЬНИКУ СЛУЖБЫ АиМО ЛПУМГ</button>
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(false)">НЕЗАМЕДЛИТЕЛЬНО СООБЩИТЬ НАЧАЛЬНИКУ ОТДЕЛА ИБ СКЗ</button>
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(false)">НЕЗАМЕДЛИТЕЛЬНО ОТКЛЮЧИТЬ АСУ ТП ОТ СЕТИ ПИТАНИЯ</button>
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(true)">НЕЗАМЕДЛИТЕЛЬНО СООБЩИТЬ ДИСПЕТЧЕРУ ЛПУМГ</button>
+      </div>
+    }
+    @if(currentQuestion === 2){
+      <div class="cyber-security__question">
+        <span class="cyber-security__text">Какие меры ответственности предусмотрены законодательством РФ за нарушение требований ФЗ от 26.07.2017 №187?
+        </span>
+      </div>
+      <div class="cyber-security__question-variants">
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(false)">Уголовная ответственность – до 10 лет
+          Административная ответственность – штраф
+          </button>
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(false)">Уголовная ответственность – до 3 лет
+        </button>
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(false)">Административная ответственность – штраф
+        </button>
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(true)">Уголовная ответственность – до 5 лет
+          Административная ответственность – штраф
+          </button>
+      </div>
+    }
+    @if(currentQuestion === 3){
+      <div class="cyber-security__question">
+        <span class="cyber-security__text">Как расшифровывается аббревиатура КИИ?
+        </span>
+      </div>
+      <div class="cyber-security__question-variants">
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(false)">Конфедициальная информационная инфрастурктура
+          </button>
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(false)">Критическая информационная инфрастурктура
+        </button>
+        <button class="cyber-security__question-variant" (click)="answerOnQuestion(true)">Комерческая информационная инфрастурктура
+        </button>
+      </div>
+    }
+  }
+  @if(errorCode) {
+    <div class="cyber-security__message-container">
+      <div class="cyber-security__message-title">Вы проиграли</div>
+      @switch(errorCode) {
+        @case(1) {
+          <img src="../../../../../../../assets/img/error1.gif" alt="">
+        }
+        @case(2) {
+          <img src="../../../../../../../assets/img/error2.gif" alt="">
+        }
+        @case(3) {
+          <img src="../../../../../../../assets/img/error3.gif" alt="">
+        }
+        @case(4) {
+          <img src="../../../../../../../assets/img/error4.gif" alt="">
+        }
+      }
+      <br>
+      <button class="cyber-security__message-button" (click)="errorCode = null">Вернуться к ответу</button>
     </div>
-  </div>
+  }
+  @if (showSuccessMessage) {
+    <div class="cyber-security__message-container">
+      <div class="cyber-security__message-title">Молодец!</div>
+      <img src="../../../../../../../assets/img/success.gif" alt="">
+      <br>
+      <button class="cyber-security__message-button" (click)="nextBtnClickHandler()">Дальше</button>
+    </div>
+  }
 </div>
