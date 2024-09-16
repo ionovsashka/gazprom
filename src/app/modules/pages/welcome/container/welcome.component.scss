@@ -1,0 +1,30 @@
+.welcome {
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 16px;
+
+  &__text {
+    font-size: 96px;
+    color: white;
+    text-align: center;
+  }
+
+  &__button {
+    width: 250px;
+    padding: 8px;
+    font-size: 22px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+
+    &:hover {
+      transition: all .3s ease-in-out;
+      color: white;
+      background-color: cornflowerblue;
+    }
+  }
+}

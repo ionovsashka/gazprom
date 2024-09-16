@@ -1,9 +1,9 @@
 @use "../../../../../styles/mixins/hoverable-mixins" as hoverableMixins;
 
-.training-page {
+.training-real {
   padding: 24px;
 
-  &__theme {
+  &__article {
     display: flex;
     align-items: center;
     justify-content: space-between;

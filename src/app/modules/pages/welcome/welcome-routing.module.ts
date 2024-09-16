@@ -1,16 +1,15 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { Routes } from "@angular/router";
-import { TrainingComponent } from "./container/training.component";
-
+import { WelcomeComponent } from "../welcome/container/welcome.component";
 
 /**
- * Пути модуля с обучающими материалами.
+ * Пути модуля вступительной страницы.
  */
 const routes: Routes = [
   {
     path: "",
-    component: TrainingComponent,
+    component: WelcomeComponent,
   }
 ]
 
@@ -21,5 +20,5 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
 })
-export class TrainingRoutingModule {}
+export class WelcomeRoutingModule {}
 

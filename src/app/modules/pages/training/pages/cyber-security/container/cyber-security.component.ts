@@ -44,7 +44,7 @@ randomNumber(min: number, max: number): number {
 
 nextBtnClickHandler() {
   if (this.currentQuestion === 3) {
-    this._router.navigate(["training"], { queryParams: { status: "passed" }})
+    this._router.navigate(["tests"], { queryParams: { status: "passed" }})
     return;
   }
 

@@ -2,6 +2,7 @@
   "name": "untitled",
   "version": "0.0.0",
   "scripts": {
+    "script": "sudo /opt/cprocsp/sbin/amd64/cpconfig -license -set 40400-00005-27345-00AYR-235HH",
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",

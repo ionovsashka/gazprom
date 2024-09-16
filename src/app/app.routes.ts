@@ -5,7 +5,21 @@ export const routes: Routes = [
   {
     path: "",
     pathMatch: "full",
-    redirectTo: "tests",
+    redirectTo: "welcome",
+  },
+  {
+    path: "welcome",
+    loadComponent: (): Promise<Type<unknown>> =>
+      import("./modules/pages/welcome/container/welcome.component").then(
+        (module) => module.WelcomeComponent,
+      ),
+  },
+  {
+    path: "training",
+    loadComponent: (): Promise<Type<unknown>> =>
+      import("./modules/pages/training-real/container/training-real.component").then(
+        (module) => module.TrainingRealComponent,
+      ),
   },
   {
     path: "tests",
